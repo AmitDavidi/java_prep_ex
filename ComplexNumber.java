@@ -66,9 +66,4 @@ public class ComplexNumber {
         double radius = difference.getRadius();
         return radius < EPSILON;
     }
-
-      
-    public static void main(String[] argumentss) {
-        
-    }
 }
