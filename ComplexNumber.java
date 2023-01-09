@@ -1,5 +1,3 @@
-import java.lang.Math;
-
 public class ComplexNumber {
 
     private final double real_part;
@@ -12,12 +10,12 @@ public class ComplexNumber {
         this.imaginary_part = imaginaryPart;
     }
 
-    public double getReal() {
+    public double getRealPart() {
         return real_part;
     }
     
 
-    public double getImaginary() {
+    public double getImaginaryPart() {
         return imaginary_part;
     }    
     
@@ -36,15 +34,17 @@ public class ComplexNumber {
 
     public ComplexNumber times(ComplexNumber other) {
         return new ComplexNumber(this.real_part * other.real_part - this.imaginary_part * other.imaginary_part,
-                           this.real_part * other.imaginary_part + this.imaginary_part * other.real_part);
-      }
+                                this.real_part * other.imaginary_part + this.imaginary_part * other.real_part);
+    }
 
 
     
     public ComplexNumber divide(ComplexNumber other) {
+
         double divisor = other.real_part * other.real_part + other.imaginary_part * other.imaginary_part;
+
         return new ComplexNumber((this.real_part * other.real_part + this.imaginary_part * other.imaginary_part) / divisor,
-                            (this.imaginary_part * other.real_part - this.real_part * other.imaginary_part) / divisor);
+                               (this.imaginary_part * other.real_part - this.real_part * other.imaginary_part) / divisor);
     }
 
     public static void main(String[] argumentss) {
